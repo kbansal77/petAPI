@@ -2,7 +2,7 @@
 
 ### Steps to use petAPI
 
-## Install 'Requirement.txt'
+## Install 'Requirements.txt'
 ```
-pip install requirement.txt
+pip install requirements.txt
 ```
