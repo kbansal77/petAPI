@@ -5,6 +5,14 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 from routers import pet, owner
 from firebase_admin import auth
 
+app = FastAPI(
+    title="Pet API",
+    description="Backend for the PetAPI",
+    version="1.0",
+    openapi_tags=tags_metadata
+)
+
+
 tags_metadata = [
     {
         "name": "Pet",
@@ -18,12 +26,7 @@ tags_metadata = [
     }
 ]
 
-app = FastAPI(
-    title="Pet API",
-    description="Backend for the Pet API",
-    version="1.0",
-    openapi_tags=tags_metadata
-)
+
 
 
 @app.exception_handler(RequestValidationError)
@@ -49,44 +52,3 @@ app.include_router(
     tags=["Owner"]
 )
 
-# app.include_router(
-#     post.router,
-#     prefix="/post",
-#     tags=["Post"]
-# )
-
-# app.include_router(
-#     course.router,
-#     prefix="/course",
-#     tags=["Course"]
-# )
-
-# app.include_router(
-#     chapter.router,
-#     prefix="/chapter",
-#     tags=["Chapter"]
-# )
-
-# app.include_router(
-#     user.router,
-#     prefix="/user",
-#     tags=["User"]
-# )
-
-# app.include_router(
-#     badge.router,
-#     prefix="/badge",
-#     tags=["Badge"]
-# )
-
-# app.include_router(
-#     bookmark.router,
-#     prefix="/bookmark",
-#     tags=["Bookmark"]
-# )
-
-# app.include_router(
-#     notification.router,
-#     prefix="/notification",
-#     tags=["Notification"]
-# )
